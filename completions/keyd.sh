@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-# @flag -v --version    Print the current version and exit.
-# @flag -h --help       Print help and exit.
+# @flag -v --version    Print the current version and exit
+# @flag -h --help       Print help and exit
 
 # {{ keyd monitor
 # @cmd Print key events in real time
@@ -26,7 +26,7 @@ list-keys() {
 # }} keyd list-keys
 
 # {{ keyd reload
-# @cmd Trigger a reload .
+# @cmd Trigger a reload
 reload() {
     :;
 }

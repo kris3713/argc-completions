@@ -38,24 +38,6 @@ fields() {
 }
 # }} beet fields
 
-# {{ beet fish
-# @cmd
-# @flag -h --help             show this help message and exit
-# @flag -f --noFields         omit album/track field completions
-# @option -e --extravalues    include specified field *values* in completions
-# @option -o --output         where to save the script.
-fish() {
-    :;
-}
-# }} beet fish
-
-# {{ beet generate
-# @cmd Fish shell tab completions
-generate() {
-    :;
-}
-# }} beet generate
-
 # {{ beet give
 # @cmd detailed help on a specific sub-command
 give() {

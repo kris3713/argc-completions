@@ -1,29 +1,28 @@
 #!/usr/bin/env bash
 # Automatic generated, DON'T MODIFY IT.
 
-# @option -l --log-level <level>    set log level (default: "info")
-# @flag -q --quiet                  sets log level to error
-# @flag -v --verbose                sets log level to verbose
-# @flag -d --debug                  sets log level to debug
-# @flag -V --version                output the version number
-# @flag -h --help                   display help for command
 # @arg run
 # @arg yourcommand
 
 # {{ dotenvx run
 # @cmd inject env at runtime [dotenvx run --yourcommand]
-# @option -e --env* <strings>          environment variable(s) set as string (example: "HELLO=World") (default: [])
-# @option -f --env-file* <paths>       path(s) to your env file(s) (default: [])
-# @option -fk <path>                   path to your .env.keys file (default: same path as your env file)
-# @option --env-keys-file <path>       path to your .env.keys file (default: same path as your env file)
-# @option -fv* <paths>                 path(s) to your .env.vault file(s) (default: [])
-# @option --env-vault-file* <paths>    path(s) to your .env.vault file(s) (default: [])
-# @flag -o --overload                  override existing env variables (by default, existing env vars take precedence over .env files)
-# @flag --strict                       process.exit(1) on any errors (default: false)
-# @option --convention <name>          load a .env convention (available conventions: ['nextjs', 'flow'])
-# @option --ignore* <errorCodes>       error code(s) to ignore (example: --ignore=MISSING_ENV_FILE)
-# @flag --ops-off                      disable dotenvx-ops features (default: false)
-# @flag -h --help                      display help for command
+# @option -e --env* <strings>       environment variable(s) set as string (example: "HELLO=World") (default: [])
+# @option -f --file <path>          path(s) to your env file(s) (default: [])
+# @option -fk <path>                path(s) to your .env.keys file(s) (default: same path as your env file)
+# @option --env-keys-file <path>    path(s) to your .env.keys file(s) (default: same path as your env file)
+# @flag -o --overload               override existing env variables (by default, existing env vars take precedence over .env files)
+# @flag --strict                    process.exit(1) on any errors (default: false)
+# @option --profile <name>          select an Envfile profile
+# @option --convention <name>       load a .env convention (available conventions: ['nextjs', 'flow'])
+# @option --ignore* <errorCodes>    error code(s) to ignore (example: --ignore=MISSING_ENV_FILE)
+# @option --token <token>           set Armor ⛨ token
+# @option --mask <characters>       inject masked values, optionally setting visible characters
+# @flag --redact                    redact injected values except public keys (Envfile rules take precedence) (default: false)
+# @flag --no-armor                  disable Dotenvx Armor features
+# @flag --no-native                 disable OS secret store features
+# @flag --no-1password              disable 1Password secret reference resolution
+# @flag --no-bitwarden              disable Bitwarden secret reference resolution
+# @flag -h --help                   display help for command
 run() {
     :;
 }
@@ -31,34 +30,49 @@ run() {
 
 # {{ dotenvx get
 # @cmd return a single environment variable
-# @option -e --env* <strings>                 environment variable(s) set as string (example: "HELLO=World") (default: [])
-# @option -f --env-file* <paths>              path(s) to your env file(s) (default: [])
-# @option -fk <path>                          path to your .env.keys file (default: same path as your env file)
-# @option --env-keys-file <path>              path to your .env.keys file (default: same path as your env file)
-# @option -fv* <paths>                        path(s) to your .env.vault file(s) (default: [])
-# @option --env-vault-file* <paths>           path(s) to your .env.vault file(s) (default: [])
-# @flag -o --overload                         override existing env variables (by default, existing env vars take precedence over .env files)
-# @flag --strict                              process.exit(1) on any errors (default: false)
-# @option --convention <name>                 load a .env convention (available conventions: ['nextjs', 'flow'])
-# @option --ignore* <errorCodes>              error code(s) to ignore (example: --ignore=MISSING_ENV_FILE)
-# @flag -a --all                              include all machine envs as well
-# @flag -pp                                   pretty print output
-# @flag --pretty-print                        pretty print output
-# @option --format[json|shell|eval] <type>    format of the output (default: "json")
-# @flag -h --help                             display help for command
-# @arg key                                    environment variable name
+# @option -e --env* <strings>             environment variable(s) set as string (example: "HELLO=World") (default: [])
+# @option -f --file <path>                path(s) to your env file(s) (default: [])
+# @option -fk <path>                      path(s) to your .env.keys file(s) (default: same path as your env file)
+# @option --env-keys-file <path>          path(s) to your .env.keys file(s) (default: same path as your env file)
+# @flag -o --overload                     override existing env variables (by default, existing env vars take precedence over .env files)
+# @flag --strict                          process.exit(1) on any errors (default: false)
+# @option --profile <name>                select an Envfile profile
+# @option --convention <name>             load a .env convention (available conventions: ['nextjs', 'flow'])
+# @option --ignore* <errorCodes>          error code(s) to ignore (example: --ignore=MISSING_ENV_FILE)
+# @flag -a --all                          include all machine envs as well
+# @option -ik* <includeKeys>              keys(s) to include in output (default: all)
+# @option --include-key* <includeKeys>    keys(s) to include in output (default: all)
+# @option -ek* <excludeKeys>              keys(s) to exclude from output (default: none)
+# @option --exclude-key* <excludeKeys>    keys(s) to exclude from output (default: none)
+# @option --mask <characters>             mask values, optionally setting visible characters
+# @flag -pp                               pretty print output
+# @flag --pretty-print                    pretty print output
+# @flag --pp                              pretty print output (alias)
+# @option --format[json|shell|colon|eval|eval-export] <type>  format of the output (default: "json")
+# @flag --no-armor                        disable Dotenvx Armor features
+# @flag --no-native                       disable OS secret store features
+# @flag --no-1password                    disable 1Password secret reference resolution
+# @flag --no-bitwarden                    disable Bitwarden secret reference resolution
+# @flag -h --help                         display help for command
+# @arg key                                environment variable name
 get() {
     :;
 }
 # }} dotenvx get
 
 # {{ dotenvx set
-# @cmd set a single environment variable
-# @option -f --env-file* <paths>    path(s) to your env file(s) (default: [])
+# @cmd encrypt a single environment variable
+# @option --profile <name>          select an Envfile profile
+# @option -f --file <path>          path(s) to your env file(s) (default: [])
 # @option -fk <path>                path to your .env.keys file (default: same path as your env file)
 # @option --env-keys-file <path>    path to your .env.keys file (default: same path as your env file)
 # @flag -c --encrypt                encrypt value (default: true)
-# @flag -p --plain                  store value as plain text (default: false)
+# @flag --plain                     store value as plain text (default: false)
+# @flag --no-create                 do not create .env file(s) when missing
+# @flag --no-armor                  disable Dotenvx Armor features
+# @flag --no-native                 disable OS secret store features
+# @flag --no-1password              disable 1Password features
+# @flag --no-bitwarden              disable Bitwarden features
 # @flag -h --help                   display help for command
 # @arg key                          KEY
 # @arg value                        value
@@ -67,15 +81,33 @@ set() {
 }
 # }} dotenvx set
 
+# {{ dotenvx del
+# @cmd delete a single environment variable
+# @option -f --file <path>    path(s) to your env file(s) (default: [])
+# @flag -h --help             display help for command
+# @arg key                    KEY
+del() {
+    :;
+}
+# }} dotenvx del
+
 # {{ dotenvx encrypt
-# @cmd convert .env file(s) to encrypted .env file(s)
-# @option -f --env-file* <paths>          path(s) to your env file(s) (default: [])
+# @cmd encrypt .env file(s)
+# @option --with <public-key>             encrypt with this public key; accepts a fresh file or matching existing public key
+# @option --profile <name>                select an Envfile profile
+# @option -f --file <path>                path(s) to your env file(s) (default: [])
 # @option -fk <path>                      path to your .env.keys file (default: same path as your env file)
 # @option --env-keys-file <path>          path to your .env.keys file (default: same path as your env file)
 # @option -k --key* <keys>                keys(s) to encrypt (default: all keys in file)
 # @option -ek* <excludeKeys>              keys(s) to exclude from encryption (default: none)
 # @option --exclude-key* <excludeKeys>    keys(s) to exclude from encryption (default: none)
 # @flag --stdout                          send to stdout
+# @option --token <token>                 set Armor ⛨ token
+# @flag --no-create                       do not create .env file(s) when missing
+# @flag --no-armor                        disable Dotenvx Armor features
+# @flag --no-native                       disable OS secret store features
+# @flag --no-1password                    disable 1Password features
+# @flag --no-bitwarden                    disable Bitwarden features
 # @flag -h --help                         display help for command
 encrypt() {
     :;
@@ -83,14 +115,17 @@ encrypt() {
 # }} dotenvx encrypt
 
 # {{ dotenvx decrypt
-# @cmd convert encrypted .env file(s) to plain .env file(s)
-# @option -f --env-file* <paths>          path(s) to your env file(s) (default: [])
-# @option -fk <path>                      path to your .env.keys file (default: same path as your env file)
-# @option --env-keys-file <path>          path to your .env.keys file (default: same path as your env file)
+# @cmd decrypt .env file(s)
+# @option -f --file <path>                path(s) to your env file(s) (default: [])
+# @option -fk <path>                      path(s) to your .env.keys file(s) (default: same path as your env file)
+# @option --env-keys-file <path>          path(s) to your .env.keys file(s) (default: same path as your env file)
 # @option -k --key* <keys>                keys(s) to decrypt (default: all keys in file)
 # @option -ek* <excludeKeys>              keys(s) to exclude from decryption (default: none)
 # @option --exclude-key* <excludeKeys>    keys(s) to exclude from decryption (default: none)
+# @flag --no-armor                        disable Dotenvx Armor features
+# @flag --no-native                       disable OS secret store features
 # @flag --stdout                          send to stdout
+# @option --mask <characters>             mask stdout values, optionally setting visible characters
 # @flag -h --help                         display help for command
 decrypt() {
     :;
@@ -99,193 +134,170 @@ decrypt() {
 
 # {{ dotenvx keypair
 # @cmd print public/private keys for .env file(s)
-# @option -f --env-file* <paths>         path(s) to your env file(s)
-# @option -fk <path>                     path to your .env.keys file (default: same path as your env file)
-# @option --env-keys-file <path>         path to your .env.keys file (default: same path as your env file)
-# @flag -pp                              pretty print output
-# @flag --pretty-print                   pretty print output
-# @option --format[json|shell] <type>    format of the output (default: "json")
-# @flag -h --help                        display help for command
-# @arg key                               environment variable key name
+# @option -f --file <path>                     path(s) to your env file(s)
+# @option -fk <path>                           path(s) to your .env.keys file(s) (default: same path as your env file)
+# @option --env-keys-file <path>               path(s) to your .env.keys file(s) (default: same path as your env file)
+# @flag --no-armor                             disable Dotenvx Armor features
+# @flag --no-native                            disable OS secret store features
+# @flag --no-1password                         disable 1Password features
+# @flag --no-bitwarden                         disable Bitwarden features
+# @flag -pp                                    pretty print output
+# @flag --pretty-print                         pretty print output
+# @flag --pp                                   pretty print output (alias)
+# @option --format[json|shell|colon] <type>    format of the output (default: "json")
+# @flag -h --help                              display help for command
+# @arg key                                     environment variable key name
 keypair() {
     :;
 }
 # }} dotenvx keypair
 
-# {{ dotenvx ls
-# @cmd print all .env files in a tree structure
-# @option -f --env-file* <filenames>    path(s) to your env file(s) (default: ".env*")
-# @option -ef* <excludeFilenames>       path(s) to exclude from your env file(s) (default: none)
-# @option --exclude-env-file* <excludeFilenames>  path(s) to exclude from your env file(s) (default: none)
-# @flag -h --help                       display help for command
-# @arg directory                        directory to list .env files from (default: ".")
-ls() {
-    :;
-}
-# }} dotenvx ls
-
-# {{ dotenvx rotate
-# @cmd rotate keypair(s) and re-encrypt .env file(s)
-# @option -f --env-file* <paths>          path(s) to your env file(s) (default: [])
-# @option -fk <path>                      path to your .env.keys file (default: same path as your env file)
-# @option --env-keys-file <path>          path to your .env.keys file (default: same path as your env file)
-# @option -k --key* <keys>                keys(s) to encrypt (default: all keys in file)
-# @option -ek* <excludeKeys>              keys(s) to exclude from encryption (default: none)
-# @option --exclude-key* <excludeKeys>    keys(s) to exclude from encryption (default: none)
-# @flag --stdout                          send to stdout
-# @flag -h --help                         display help for command
-rotate() {
-    :;
-}
-# }} dotenvx rotate
-
-# {{ dotenvx ops
-# @cmd 🏰 ops
-# @option -l --log-level <level>    set log level (default: "info")
-# @flag -q --quiet                  sets log level to error
-# @flag -v --verbose                sets log level to verbose
-# @flag -d --debug                  sets log level to debug
-# @flag -V --version                output the version number
-# @flag -h --help                   display help for command
-ops() {
-    :;
-}
-
-# {{{ dotenvx ops run
-# @cmd inject env at runtime [dotenvx run --yourcommand]
-ops::run() {
-    :;
-}
-# }}} dotenvx ops run
-
-# {{{ dotenvx ops get
-# @cmd return a single environment variable
-ops::get() {
-    :;
-}
-# }}} dotenvx ops get
-
-# {{{ dotenvx ops set
-# @cmd set a single environment variable
-ops::set() {
-    :;
-}
-# }}} dotenvx ops set
-
-# {{{ dotenvx ops encrypt
-# @cmd convert .env file(s) to encrypted .env file(s)
-ops::encrypt() {
-    :;
-}
-# }}} dotenvx ops encrypt
-
-# {{{ dotenvx ops decrypt
-# @cmd convert encrypted .env file(s) to plain .env file(s)
-ops::decrypt() {
-    :;
-}
-# }}} dotenvx ops decrypt
-
-# {{{ dotenvx ops keypair
-# @cmd print public/private keys for .env file(s)
-ops::keypair() {
-    :;
-}
-# }}} dotenvx ops keypair
-
-# {{{ dotenvx ops ls
-# @cmd print all .env files in a tree structure
-ops::ls() {
-    :;
-}
-# }}} dotenvx ops ls
-
-# {{{ dotenvx ops rotate
-# @cmd rotate keypair(s) and re-encrypt .env file(s)
-ops::rotate() {
-    :;
-}
-# }}} dotenvx ops rotate
-
-# {{{ dotenvx ops ext
-# @cmd 🔌 extensions
-ops::ext() {
-    :;
-}
-# }}} dotenvx ops ext
-# }} dotenvx ops
-
-# {{ dotenvx ext
-# @cmd 🔌 extensions
+# {{ dotenvx hidden
+# @cmd hidden features
 # @flag -h --help    display help for command
-ext() {
+hidden() {
     :;
 }
 
-# {{{ dotenvx ext ls
+# {{{ dotenvx hidden update
+# @cmd update dotenvx
+hidden::update() {
+    :;
+}
+# }}} dotenvx hidden update
+
+# {{{ dotenvx hidden feedback
+# @cmd send feedback to dotenvx
+hidden::feedback() {
+    :;
+}
+# }}} dotenvx hidden feedback
+
+# {{{ dotenvx hidden protect
+# @cmd protect secrets and private keys from code commits
+hidden::protect() {
+    :;
+}
+# }}} dotenvx hidden protect
+
+# {{{ dotenvx hidden ls
 # @cmd print all .env files in a tree structure
-# @option -f --env-file* <filenames>    path(s) to your env file(s) (default: ".env*")
-# @option -ef* <excludeFilenames>       path(s) to exclude from your env file(s) (default: none)
-# @option --exclude-env-file* <excludeFilenames>  path(s) to exclude from your env file(s) (default: none)
-# @flag -h --help                       display help for command
-# @arg directory                        directory to list .env files from (default: ".")
-ext::ls() {
+hidden::ls() {
     :;
 }
-# }}} dotenvx ext ls
+# }}} dotenvx hidden ls
 
-# {{{ dotenvx ext genexample
+# {{{ dotenvx hidden genexample
 # @cmd generate .env.example
-# @option -f --env-file* <paths>    path(s) to your env file(s) (default: ".env")
-# @flag -h --help                   display help for command
-# @arg directory                    directory to generate from (default: ".")
-ext::genexample() {
+hidden::genexample() {
     :;
 }
-# }}} dotenvx ext genexample
+# }}} dotenvx hidden genexample
 
-# {{{ dotenvx ext gitignore
-# @cmd append to .gitignore file (and if existing, .dockerignore, .npmignore, and .vercelignore)
-# @option --pattern* <patterns>    pattern(s) to gitignore (default: [".env*"])
-# @flag -h --help                  display help for command
-ext::gitignore() {
+# {{{ dotenvx hidden native
+# @cmd ⌥ move private keys in/out of your OS secret store
+hidden::native() {
     :;
 }
-# }}} dotenvx ext gitignore
+# }}} dotenvx hidden native
 
-# {{{ dotenvx ext prebuild
-# @cmd prevent including .env files in docker builds
-# @flag -h --help    display help for command
-# @arg directory     directory to prevent including .env files from (default: ".")
-ext::prebuild() {
+# {{{ dotenvx hidden 1password
+# @cmd □ move private keys in/out of 1Password
+hidden::1password() {
     :;
 }
-# }}} dotenvx ext prebuild
+# }}} dotenvx hidden 1password
 
-# {{{ dotenvx ext precommit
-# @cmd prevent committing .env files to code
-# @flag -i --install    install to .git/hooks/pre-commit
-# @flag -h --help       display help for command
-# @arg directory        directory to prevent committing .env files from (default: ".")
-ext::precommit() {
+# {{{ dotenvx hidden bitwarden
+# @cmd □ move private keys in/out of Bitwarden
+hidden::bitwarden() {
     :;
 }
-# }}} dotenvx ext precommit
+# }}} dotenvx hidden bitwarden
 
-# {{{ dotenvx ext scan
-# @cmd scan for leaked secrets
-# @flag -h --help    display help for command
-ext::scan() {
+# {{{ dotenvx hidden armor
+# @cmd ⛨ move private keys in/out of Dotenvx Armor [www.dotenvx.com/armor]
+hidden::armor() {
     :;
 }
-# }}} dotenvx ext scan
+# }}} dotenvx hidden armor
 
-# {{{ dotenvx ext vault
-# @cmd 🔐 manage .env.vault files
-ext::vault() {
+# {{{ dotenvx hidden curl
+# @cmd ⛨ call authenticated api Dotenvx Armor [www.dotenvx.com/armor]
+hidden::curl() {
     :;
 }
-# }}} dotenvx ext vault
-# }} dotenvx ext
+# }}} dotenvx hidden curl
+
+# {{{ dotenvx hidden spec
+# @cmd create an Envfile
+hidden::spec() {
+    :;
+}
+# }}} dotenvx hidden spec
+
+# {{{ dotenvx hidden check
+# @cmd check Envfile rules against .env file(s)
+hidden::check() {
+    :;
+}
+# }}} dotenvx hidden check
+
+# {{{ dotenvx hidden primitives
+# @cmd resolve an Envfile profile to comma-separated filenames
+hidden::primitives() {
+    :;
+}
+# }}} dotenvx hidden primitives
+
+# {{{ dotenvx hidden redact
+# @cmd replace secret strings in text with [REDACTED]
+hidden::redact() {
+    :;
+}
+# }}} dotenvx hidden redact
+
+# {{{ dotenvx hidden policy
+# @cmd print the Envfile policy for selected files as JSON
+hidden::policy() {
+    :;
+}
+# }}} dotenvx hidden policy
+
+# {{{ dotenvx hidden keypair
+# @cmd generate or restore a keypair and print JSON
+hidden::keypair() {
+    :;
+}
+# }}} dotenvx hidden keypair
+
+# {{{ dotenvx hidden derive
+# @cmd derive and print a public key from a private key
+hidden::derive() {
+    :;
+}
+# }}} dotenvx hidden derive
+
+# {{{ dotenvx hidden gitignore
+# @cmd deprecated.
+hidden::gitignore() {
+    :;
+}
+# }}} dotenvx hidden gitignore
+
+# {{{ dotenvx hidden precommit
+# @cmd deprecated.
+hidden::precommit() {
+    :;
+}
+# }}} dotenvx hidden precommit
+
+# {{{ dotenvx hidden prebuild
+# @cmd deprecated.
+hidden::prebuild() {
+    :;
+}
+# }}} dotenvx hidden prebuild
+# }} dotenvx hidden
 
 command eval "$(argc --argc-eval "$0" "$@")"
